@@ -21,3 +21,5 @@ projectFilesBackup
 .DS_Store
 
 dist/
+assets/css
+assets/js
