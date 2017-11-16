@@ -1,0 +1,28 @@
+ {{!< default}}
+
+<header class="site-header outer">
+  {{!--  {{> "site-nav"}}  --}}
+</header>
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+<main class="" role="main">
+  <article class="">
+    <header class="">
+      <h1 class="post-full-title">{{title}}</h1>
+    </header>
+
+    <section class="">
+      {{content}}
+    </section>
+
+    <footer class="">
+      {{#author}}
+        {{name}}
+      {{/author}}
+    </footer>
+  </article>
+</main>
+
+{{/post}}

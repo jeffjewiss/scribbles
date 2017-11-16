@@ -1,0 +1,21 @@
+{{!< default}}
+
+<header>
+  <h1>
+    {{#if @blog.logo}}
+      <img class="" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+    {{else}}
+      {{@blog.title}}
+    {{/if}}
+  </h1>
+</header>
+
+{{!--  {{> "site-nav"}}  --}}
+
+<main class="" role="main">
+  {{#foreach posts}}
+    <a class="link" href="{{url}}">
+      <h2 class="">{{title}}</h2>
+    </a>
+  {{/foreach}}
+</main>
