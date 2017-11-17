@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "gulp",
+    "scan": "gscan .",
     "zip": "gulp zip"
   },
   "license": "MIT",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "6.3.6",
     "cssnano": "3.7.1",
+    "gscan": "1.2.1",
     "gulp": "3.9.1",
     "gulp-livereload": "3.8.1",
     "gulp-nodemon": "2.1.0",
