@@ -16,23 +16,26 @@
   {{!-- This tag outputs SEO meta+structured data and other important settings --}}
   {{ghost_head}}
 </head>
-<body class="{{body_class}}">
-  <div class="flex flex-column min-vh-100">
+<body class="sans-serif {{body_class}}">
+  <div class="flex flex-column">
 
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
     {{!-- The footer at the very bottom of the screen --}}
-    <footer class="">
-      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-      <nav class="site-footer-nav">
-        <a href="{{@blog.url}}">Latest Posts</a>
-        {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-        {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-      </nav>
-    </footer>
 
   </div>
+  <footer class="w-100 bt b--light-gray bg-washed-blue pv4 lh-copy">
+    <div class="mr-auto ml-auto mw7 ph3">
+      <p class="gray">{{@blog.description}}</p>
+      <nav class="pb3">
+        {{#if @blog.facebook}}<a class="pr3 blue hover-navy" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+        {{#if @blog.twitter}}<a class="pr3 blue hover-navy" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{@blog.twitter}}</a>{{/if}}
+        <a class="pr3 blue hover-navy" href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">Subscribe via RSS</a>
+      </nav>
+      <section class="gray"><a class="link gray" href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+    </div>
+  </footer>
 
   {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
   {{{block "scripts"}}}

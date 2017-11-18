@@ -1,21 +1,29 @@
 {{!< default}}
 
-<header>
-  <h1>
-    {{#if @blog.logo}}
-      <img class="" src="{{@blog.logo}}" alt="{{@blog.title}}" />
-    {{else}}
-      {{@blog.title}}
-    {{/if}}
-  </h1>
+<header class="ml-auto mr-auto mw7 ph3 pv5">
+  <a class="link near-black hover-green" href="{{@blog.url}}">
+    <h1 class="center ml-auto mr-auto mv0">
+      {{#if @blog.logo}}
+        <img class="" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+      {{else}}
+        {{@blog.title}}
+      {{/if}}
+    </h1>
+  </a>
 </header>
 
 {{!--  {{> "site-nav"}}  --}}
 
-<main class="" role="main">
-  {{#foreach posts}}
-    <a class="link" href="{{url}}">
-      <h2 class="">{{title}}</h2>
-    </a>
-  {{/foreach}}
+<main class="ml-auto mr-auto mw7 ph3" role="main">
+  <ul class="list ph0">
+    {{#foreach posts}}
+      <li class="mb4">
+        <a class="dark-green hover-near-black f4 b lh-title" href="{{url}}">{{title}}</a>
+        <p class="lh-copy mb0 mt1">
+          <em class="green">{{excerpt words="33"}}</em>
+          <span class="light-green">{{reading_time}}</span>
+        </p>
+      </li>
+    {{/foreach}}
+  </ul>
 </main>
