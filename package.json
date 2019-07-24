@@ -1,9 +1,9 @@
 {
   "name": "scribbles",
-  "description": "A personal journal theme for ghost. Text focused.",
+  "description": "A minimal theme for ghost. Text focused.",
   "version": "0.0.0",
   "engines": {
-    "ghost": ">=1.17.0"
+    "ghost-api": "v2"
   },
   "scripts": {
     "start": "gulp",
@@ -15,6 +15,10 @@
     "name": "Jeff Jewiss",
     "email": "jeff@jeffjewiss.com",
     "url": "jeffjewiss.com"
+  },
+  "config": {
+    "posts_per_page": 5,
+    "image_sizes": {}
   },
   "keywords": [
     "ghost",
@@ -43,8 +47,5 @@
     "postcss-custom-properties": "5.0.1",
     "postcss-easy-import": "1.0.1",
     "tachyons": "4.9.0"
-  },
-  "config": {
-    "posts_per_page": 25
   }
 }
